@@ -1,0 +1,36 @@
+#Problema 3:
+#Por medio de un bucle While genere un código que permita el ingreso de números por teclado. El ingreso de los números debe ser permitido hasta que el usuario decida ya no ingresar nuevos números.
+#Con dichos números, su programa debe evaluar cada uno de estos números e indicar la cantidad de números pares e impares.
+
+# Primero necesitamos declarar tres variables: La lista en sí, un contador de números pares e imparares,
+
+Lista_numeros = [] # La primera linea declarará la lista de números que ingresaremos. 
+Contador_numeros_pares = 0 # Contador para números pares
+Contador_numeros_impares = 0 # Contador de números impares
+# Ahora viene la lógica usando el bucle WHILE para ingresar lo números hasta que el porgragam pida NO ingresar más.
+
+while True:
+   #La siguiente línea de códigos pedirán al usuario ingresar elementos o no. Además, los agregarán a la lista de números 
+   #ya declarada líneas arriba.
+   Ingresar_numeros = input("¿ El usuario desea ingresar un nuevo elemnto, número, a la lista? : SI/NO ").strip().upper()
+
+   if Ingresar_numeros=="NO":
+      break
+   elif Ingresar_numeros=="SI":
+       try:
+          numero = int(input(" Ingrese el número. "). strip ())
+          Lista_numeros.append(numero)
+          # Las siguinetes lineas de códigos identificarán si el número es par o impar y lo almacenarán como cotadores en 
+          # los contadoresde ya declarados
+          if numero%2 == 0: 
+              Contador_numeros_pares  +=1
+          else:
+              Contador_numeros_impares +=1
+       except ValueError:
+           print ("Por favor, ingrese un elemento válido, es decir, solo se aceptan números")
+   else: 
+     print("Solo se aceptan afirmaciones como SI O NO. Por favor, volver a ingresar una respuesta válida")
+
+print(f"/n La lista de número ingresado es la siguiente : {Lista_numeros}")
+print(f"/n La cantidad de número pares en la Lista es: {Contador_numeros_pares}")  
+print(f"/n La cantidad de número inpares en la Lista es: {Contador_numeros_impares}")
