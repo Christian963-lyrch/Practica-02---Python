@@ -1,0 +1,32 @@
+#Problema 10:
+#En los Estados Unidos, las fechas suelen tener el siguiente formato: mes-día-año (MM/DD/AAAA). Las fechas en ese formato no se pueden ordenar fácilmente porque el año de la fecha es el último en lugar del primero. Intente ordenar, por ejemplo, 2/2/1800, 3/3/1900 y 1/1/2000 cronológicamente en cualquier programa (por ejemplo, una hoja de cálculo). Las fechas en ese formato también son ambiguas. ¡Una fecha como el 8 de septiembre de 1636, podría interpretarse como el 9 de agosto de 1636!
+
+def convertir_fecha(fecha):
+    # Creamos una lista con los 12 meses del año
+    meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"]
+    
+    # Verificar si la fecha está en el formato MM/DD/AAAA
+    if '/' in fecha:
+        partes = fecha.split('/')
+        mes = partes[0].zfill(2)  # Este formato es el que existe en el las fechas americanas
+        dia = partes[1].zfill(2)  # El día está en el centor
+        año = partes[2]           # El año está al final de la fecha
+        return f"{año}-{mes}-{dia}" # El condicional me lo regresa en formado AÑO/MES/DÍA
+    
+    # Verificar si la fecha está en el formato "Mes D, AAAA"
+    for i, mes in enumerate(meses, 1): # El mes recorrerá la lista meses ya escrita en la función "CONVERTIR_FECHA"
+        if mes in fecha:
+            partes = fecha.replace(',', '').split()  # Eliminar coma y dividir por espacio
+            mes_num = str(i).zfill(2)  # Convertir el número del mes a dos dígitos
+            dia = partes[1].zfill(2)
+            año = partes[2]
+            return f"{año}-{mes_num}-{dia}"
+    
+    return "Formato de fecha no reconocido"
+
+# Solicitar al usuario una fecha
+entrada_usuario = input("Ingrese una fecha (formato MM/DD/AAAA o 'Mes D, AAAA'): ")
+
+# Convertir la fecha y mostrar el resultado
+fecha_convertida = convertir_fecha(entrada_usuario)
+print(f"Fecha convertida: {fecha_convertida}")
