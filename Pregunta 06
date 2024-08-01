@@ -1,0 +1,16 @@
+#Problema 6:
+#Escriba un programa en Python para obtener la serie de Fibonacci entre 0 y 50. 
+def Serie_Fibonacci (limite):
+    Serie_F=[] # Defino la lista Serie_F para utilizarla y almacenar los númeroes a en ella 
+    a,b = 0,1  # Defino las variables a y b para realizar las iteraciones de la serie
+    while a <= limite:    # La lógica while me ayudará a realizar el recorrido hasta un límite que lo definiré fuera del bucle
+     Serie_F.append(a)    # Llamo a la lista Serie_F para comenzar agregar la variable a
+     a,b = b, a+b         # Esta es la lógica que me ayudará a realizar la suma de los dos últimos números y el segundo lo almacena en el primero
+    return Serie_F       # Realiza el regreso para la Serie_F
+
+# Como el problema pide la suma de los números del 0 al 50, entonces usaremos la función "Serie_Fibonacci" y determinando el 
+# límite al número 50.
+
+limite = 50              # Defino el límite con el número 50 o cualquier otro
+Serie_F = Serie_Fibonacci (limite)    # Para imprimir la lista Serie_F debo llamar a la función Serie_Fibonacci(limite)
+print(Serie_F)                        #Imprimo la Serie_F
