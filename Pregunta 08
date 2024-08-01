@@ -1,0 +1,16 @@
+#Problema 8:
+#Escribe una función de Python para calcular el factorial de un número (un entero no negativo). 
+# La función acepta el número como argumento.
+
+def funcion_factorial (n):
+    if n<0:
+        raise ValueError ("El número ingresado {n} es un número negativo. Por favor, ingresa un número entero positivo")
+    result = 1
+
+    for i in range (1,n+1):
+        result *=i
+    return result
+# Ahora para probar un número típico, evaluaremos un númeor y lo escribiremos el número evaluado y el resultado
+numero = int(input("Ingrese un número entero positivo para hallar su factorial"))
+
+print(f"El factorial del número {numero} es {funcion_factorial(numero)}")
