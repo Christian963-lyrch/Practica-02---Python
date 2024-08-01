@@ -1,0 +1,23 @@
+#Problema 4:
+#Imaginemos que lo han contratado para un colegio donde se desea realizar un sistema por el cual se pueda generar un listado de “n” alumnos y 3 calificaciones que corresponden a alguna de sus materias.
+
+# Podemos iniciar con una lista para los alumnos 
+lista_alumnos = []
+
+n = int (input ("Ingrese el número de alumnos que va ingresar o tenga en su clase: "))
+# Las siguiente de códigos realizar un bluce mediante F O R para ingresar los nombres de los alumnos y las tres (3) notas respectivas.
+
+for i in range(n):
+    nombre = input(f"Ingrese el nombre del alumno {i+1} asignado: ")
+
+    notas = []
+    for j in range (3): # Para este caso de estudio solo hay tres notas para el listado de alumnos
+        nota = int(input(f"Ingrese la nota {j+1} para el alumno {nombre} : "))
+        notas.append(nota)
+    #Ahora las siguientes líneas empleando diccionarios para correlacionar las tres notas con los alumnos 
+    Alumno = {"Alumno": nombre, "Notas": notas}
+    lista_alumnos.append(Alumno)
+# Ahora las siguientes líneas mostrarán las listas de alumnos con sus respectivas notas 
+print("\n Listado completo de alumnos con sus notas es:")
+for Alumno in lista_alumnos: 
+    print(f" Alumno: {Alumno ['Alumno']}, Notas: {Alumno['Notas']}")
