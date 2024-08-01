@@ -1,0 +1,14 @@
+#Problema 9:
+#Al enviar mensajes de texto o twittear, no es raro acortar las palabras para ahorrar tiempo o espacio, por ejemplo, omitiendo las vocales.
+#Implemente un programa que solicite al usuario una cadena de texto y luego retorne ese mismo texto pero con todas las vocales (A, E, I, O y U) omitidas, ya sea que se ingresen en mayúsculas o minúsculas.
+
+def funcion_eliminar_vocales(texto):
+    vocales = "aeiouAEIOU"
+    resultado=texto.translate(str.maketrans("","",vocales))
+    return resultado
+
+#La siguiente lineas pide al usuario ingresar un texto cualquiera
+
+texto_inicial = input(" Por favor, ingrese un texto que quiera suprimir las vocales : ")
+texto_reducido = funcion_eliminar_vocales(texto_inicial)
+print(f"El texto sin las vocales es : {texto_reducido}")
